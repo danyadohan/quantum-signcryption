@@ -1,0 +1,34 @@
+# SIGNCRYPTION
+
+# Step 1: Generate keys
+Generate (pk, sk) using Dilithium2 for signing and verification
+
+# Step 2: Prepare a quantum message
+Create a quantum circuit with one qubit
+Apply a random rotation (Ry gate) for added randomness
+Simulate the circuit to extract the quantum state |q>
+
+# Step 3: Prepare a classical message
+Define the classical message `m`
+
+# Step 4: Generate a digital signature
+Sign the classical message `m` using Dilithium2 and sk to generate signature `s`
+
+# Step 5: Convert classical data to binary
+Define a helper function to convert classical data into binary format
+Convert classical message and signature to binary
+Concatenate binary message and signature to form binary data
+
+# Step 6: Encode binary data into quantum states
+Define a function to encode binary data into qubits
+Create a quantum circuit representing the encoded data
+
+# Step 7: Create a combined quantum circuit
+Define required qubit count and create a new quantum register
+Remap qubits from the original quantum message and encoded binary data
+Compose the quantum message and encoded data circuits into a single combined circuit
+
+# Step 8: Reduce the combined circuit size for execution
+Define maximum qubit count for testing
+Remap and append a subset of operations to create a reduced circuit
+Add measurement gates to the reduced circuit
