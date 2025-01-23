@@ -72,7 +72,7 @@ The project relies on the following libraries:
 
 ## Pseudocode
 
-For a high-level algorithmic overview of the signcryption and unsigncryption processes, refer to the [Pseudocode](quantum_signcryption_pseudocode.md) file.
+For a high-level algorithmic overview of the signcryption and unsigncryption processes, refer to the [Pseudocode](quantum_signcryption_pseudocode.txt) file.
 
 
 ## References
