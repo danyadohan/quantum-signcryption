@@ -29,7 +29,6 @@ The process consists of two main modules:
 12. Bob verifies the signature using Alice's public verification key `pkA`, and at the same time, recovers the original quantum message `|ψ>`.
 
 > **Limitation:** While the model ensures confidentiality, integrity, and authenticity, it does not guarantee **non-repudiation**, as a malicious receiver could reuse parts of the signcrypted message to forge future messages.
----
 
 ## Quantum Signcryption System Implementation
 
@@ -48,7 +47,6 @@ The system was developed and tested in a structured environment to ensure smooth
 3. **Jupyter Notebook:**  
    - Utilized for iterative development, testing, and visualization of quantum circuits.
 
----
 
 ### **Programming Language**
 
@@ -72,13 +70,10 @@ The project relies on the following libraries:
    - Python’s built-in `secrets` module for secure random number generation.
    - `BytesIO` from the `io` module for handling data streams.
 
----
-
 ## Pseudocode
 
-For a high-level algorithmic overview of the signcryption and unsigncryption processes, refer to the [Pseudocode](pseudocode.md) file.
+For a high-level algorithmic overview of the signcryption and unsigncryption processes, refer to the [Pseudocode](quantum_signcryption_pseudocode.md) file.
 
----
 
 ## References
 
