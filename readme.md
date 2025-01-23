@@ -37,18 +37,18 @@ This table provides deeper insight into the steps mentioned above, explaining th
 
 | #  | Step                          | Goal                                                             | Inputs/Outputs                                            |
 |----|-------------------------------|------------------------------------------------------------------|----------------------------------------------------------|
-| 1  | **Quantum message preparation** | To prepare the original quantum message `|ψ>` that Alice wants to send to Bob. | **Output:** The quantum message `|ψ>`, stored in a quantum register. |
-| 2  | **Classical message preparation** | To write the classical message that Alice wants to send.         | **Output:** Alice’s message `ՠ`.                           |
-| 3  | **Classical signature generation** | To generate a quantum-secure classical signature for Alice’s `ՠ`, which will be sent along with the quantum message. | **Input:** Alice’s message `ՠ`, Alice’s private key `skA`.  <br> **Output:** Classical digital signature `σ`. |
-| 4  | **Quantum encoding**             | To encode the classical message and signature pair `(ՠ,σ)` into a quantum state `|ՠ|σ>`. | **Input:** Classical message and classical signature `(ՠ,σ)`. <br> **Output:** Quantum-encoded state `|ՠ|σ>`. |
-| 5  | **State joining**                 | To combine the quantum message `|ψ>` with the encoded classical message and signature `|ՠ|σ>`. | **Input:** Quantum message `|ψ>`, and encoded state `|ՠ|σ>`. <br> **Output:** Joint state `|ψ> ⊕ |ՠ|σ>`. |
+| 1  | **Quantum message preparation** | To prepare the original quantum message \`|ψ>\` that Alice wants to send to Bob. | **Output:** The quantum message \`|ψ>\`, stored in a quantum register. |
+| 2  | **Classical message preparation** | To write the classical message that Alice wants to send.         | **Output:** Alice’s message `m`.                           |
+| 3  | **Classical signature generation** | To generate a quantum-secure classical signature for Alice’s `m`, which will be sent along with the quantum message. | **Input:** Alice’s message `m`, Alice’s private key `skA`.  <br> **Output:** Classical digital signature `σ`. |
+| 4  | **Quantum encoding**             | To encode the classical message and signature pair `(m,σ)` into a quantum state \`|mσ>\`. | **Input:** Classical message and classical signature `(m,σ)`. <br> **Output:** Quantum-encoded state \`|mσ>\`. |
+| 5  | **State joining**                 | To combine the quantum message \`|ψ>\` with the encoded classical message and signature \`|mσ>\`. | **Input:** Quantum message \`|ψ>\`, and encoded state \`|mσ>\`. <br> **Output:** Joint state \`|ψ> ⊕ |mσ>\`. |
 | 6  | **Shared secret generation**     | To generate a shared secret to be used for symmetric encryption. | **Output:** Shared secret.                                 |
 | 7  | **Shared secret encapsulation**  | To encapsulate the shared secret and transmit it securely.       | **Input:** Shared secret, Bob’s public encryption key `ekB`. <br> **Output:** Encapsulated shared secret. |
-| 8  | **Symmetric encryption**         | To encrypt the combined quantum state `|ψ> ⊕ |ՠ|σ>`.              | **Input:** Combined quantum state `|ψ> ⊕ |ՠ|σ>`, shared secret, and IV. <br> **Output:** Quantum signcrypted state. |
+| 8  | **Symmetric encryption**         | To encrypt the combined quantum state \`|ψ> ⊕ |mσ>\`.              | **Input:** Combined quantum state \`|ψ> ⊕ |mσ>\`, shared secret, and IV. <br> **Output:** Quantum signcrypted state. |
 | 9  | **Transmission**                 | To send the encrypted data to Bob.                               | **Output:** Bob receives the encrypted quantum circuit, the IV, and the encapsulated shared secret. |
 | 10 | **Shared secret decapsulation**  | To decapsulate the encapsulated shared secret and recover it for symmetric decryption. | **Input:** Encapsulated shared secret and Bob’s private key `dkB`. <br> **Output:** Shared secret. |
-| 11 | **Circuit decryption**           | For Bob to decrypt the signcrypted message.                      | **Input:** Signcrypted quantum state, shared secret, and IV. <br> **Output:** Original quantum message `|ψ>` and classical pair `(ՠ,σ)`. |
-| 12 | **Verification**                 | For Bob to verify the signature `σ` on the message `ՠ`, confirming the message came from Alice and was not modified. | **Input:** Classical pair `(ՠ,σ)`, public verification key `pkA`. <br> **Output:** Verification result for `(ՠ,σ)`. |
+| 11 | **Circuit decryption**           | For Bob to decrypt the signcrypted message.                      | **Input:** Signcrypted quantum state, shared secret, and IV. <br> **Output:** Original quantum message \`|ψ>\` and classical pair `(m,σ)`. |
+| 12 | **Verification**                 | For Bob to verify the signature `σ` on the message `m`, confirming the message came from Alice and was not modified. | **Input:** Classical pair `(m,σ)`, public verification key `pkA`. <br> **Output:** Verification result for `(m,σ)`. |
 
 
 > **Limitation:** While the model ensures confidentiality, integrity, and authenticity, it does not guarantee **non-repudiation**, as a malicious receiver could reuse parts of the signcrypted message to forge future messages.
