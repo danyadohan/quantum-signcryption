@@ -30,6 +30,10 @@ The process consists of two main modules:
 
 > **Limitation:** While the model ensures confidentiality, integrity, and authenticity, it does not guarantee **non-repudiation**, as a malicious receiver could reuse parts of the signcrypted message to forge future messages.
 
+### Pseudocode
+
+For a high-level algorithmic overview of the signcryption and unsigncryption processes, refer to the [Pseudocode](quantum_signcryption_pseudocode.txt) file.
+
 ## Quantum Signcryption System Implementation
 
 ### **Development Environment Setup**
@@ -70,9 +74,9 @@ The project relies on the following libraries:
    - Python’s built-in `secrets` module for secure random number generation.
    - `BytesIO` from the `io` module for handling data streams.
 
-## Pseudocode
+### System Code
 
-For a high-level algorithmic overview of the signcryption and unsigncryption processes, refer to the [Pseudocode](quantum_signcryption_pseudocode.txt) file.
+For the full system code, refer to the [quantum_signcryption.ipynb](quantum_signcryption.ipynb) file.
 
 
 ## References
